@@ -3,7 +3,126 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Virtual Classroom</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <a-scene>
+      <a-box
+        position="0 5 0"
+        width="100"
+        height="20"
+        depth="100"
+        material="color: #f8c471; side: double"
+        id="classroom-wall"
+      ></a-box>
+
+      <a-plane
+        position="0 0 0"
+        rotation="-90 0 0"
+        width="100"
+        height="100"
+        material="color: #ffffff"
+      ></a-plane>
+
+      <a-plane
+        position="0 20 0"
+        rotation="90 0 0"
+        width="100"
+        height="100"
+        material="color: #ffffff"
+      ></a-plane>
+
+      <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
+      <a-light
+        type="point"
+        color="#ffffff"
+        position="0 10 0"
+        intensity="0.3"
+      ></a-light>
+      <a-light
+        type="point"
+        color="#ffffff"
+        position="0 15 0"
+        intensity="0.6"
+      ></a-light>
+
+      <a-entity
+        camera
+        position="0 10 30"
+        wasd-controls="acceleration: 100; speed: 100"
+        look-controls="pointerLockEnabled: true"
+        id="camera"
+        movement-constraint="minX: -50; maxX: 50; minY: 0; maxY: 20; minZ: -50; maxZ: 50"
+      ></a-entity>
+
+      <a-assets>
+        <a-asset-item id="deskModel" src="assets/model.obj"></a-asset-item>
+        <img id="skyTexture" src="assets/sky.jpeg" />
+      </a-assets>
+
+      <a-entity id="classroom-setup" add-classroom-items></a-entity>
+
+      <a-plane
+        position="0 5 50"
+        rotation="0 0 0"
+        width="30"
+        height="15"
+        material="src: #skyTexture; transparent: true; opacity: 0.8"
+      ></a-plane>
+      <a-plane
+        position="0 5 50"
+        rotation="0 0 0"
+        width="32"
+        height="17"
+        material="color: #000000"
+      ></a-plane>
+
+      <a-plane
+        position="0 5 -50"
+        rotation="0 180 0"
+        width="30"
+        height="15"
+        material="src: #skyTexture; transparent: true; opacity: 0.8"
+      ></a-plane>
+      <a-plane
+        position="0 5 -50"
+        rotation="0 180 0"
+        width="32"
+        height="17"
+        material="color: #000000"
+      ></a-plane>
+
+      <a-plane
+        position="-50 5 0"
+        rotation="0 90 0"
+        width="30"
+        height="15"
+        material="src: #skyTexture; transparent: true; opacity: 0.8"
+      ></a-plane>
+      <a-plane
+        position="-50 5 0"
+        rotation="0 90 0"
+        width="32"
+        height="17"
+        material="color: #000000"
+      ></a-plane>
+
+      <a-plane
+        position="50 5 0"
+        rotation="0 -90 0"
+        width="30"
+        height="15"
+        material="src: #skyTexture; transparent: true; opacity: 0.8"
+      ></a-plane>
+      <a-plane
+        position="50 5 0"
+        rotation="0 -90 0"
+        width="32"
+        height="17"
+        material="color: #000000"
+      ></a-plane>
+    </a-scene>
+  </body>
 </html>

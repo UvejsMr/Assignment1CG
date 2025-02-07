@@ -1,6 +1,14 @@
 {
+  "name": "virtual-classroom",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "start": "node server.js"
+  },
   "dependencies": {
-    "three": "^0.173.0",
-    "vite": "^6.1.0"
+    "three": "^0.148.0"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
   }
 }
