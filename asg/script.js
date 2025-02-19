@@ -60,10 +60,10 @@ function addRoadSection(w, l, color, pos, rotZ = 0) {
 }
 
 const buildings = [
-  createStructure(5, 6, 20, 0xffffff, [15, 3, 25]),
-  createStructure(5, 6, 20, 0xffffff, [-15, 3, 25]),
-  createStructure(5, 6, 20, 0xffffff, [20, 3, -10], Math.PI / 2),
-  createStructure(5, 6, 20, 0xffffff, [-20, 3, -10], -Math.PI / 2),
+  createStructure(7, 10, 35, 0xffffff, [15, 3, 25]),
+  createStructure(12, 6, 20, 0xffffff, [-15, 3, 25]),
+  createStructure(9, 6, 15, 0xffffff, [20, 3, -10], Math.PI / 2),
+  createStructure(9, 6, 15, 0xffffff, [-20, 3, -10], -Math.PI / 2),
 ];
 
 buildings.forEach((building) => scene.add(building));
